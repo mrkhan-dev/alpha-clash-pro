@@ -21,6 +21,14 @@ document.addEventListener("keyup", function (event) {
   // check alphabet
   if (expectedAlphabet === playerPressed) {
     console.log("You got a point");
+    // update score
+    const currentScoreBtn = document.getElementById("current-score");
+    const currentScoreText = currentScoreBtn.innerText;
+    const currentScore = parseInt(currentScoreText);
+    console.log(currentScore);
+    // increase the score by 1
+    const newScore = currentScore + 1;
+    currentScoreBtn.innerText = newScore;
     removeBackgroundColor(expectedAlphabet);
     continueGame();
   } else {
