@@ -8,10 +8,25 @@ function showElementById(elementId) {
   element.classList.remove("hidden");
 }
 
+function setBackgroundColor(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.add("bg-orange-400");
+}
+
+function removeBackgroundColor(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.remove("bg-orange-400");
+}
+
 function getARandomAlphabet() {
   const alphabetString = "abcdefghijklmnopqrstuvwxyz";
-  const alphabet = alphabetString.split("");
-  console.log(alphabet);
+  const alphabets = alphabetString.split("");
+  //   console.log(alphabet);
 
   // generate random index
+  const randomNumber = Math.random() * 25;
+  const index = Math.round(randomNumber);
+  const alphabet = alphabets[index];
+  //   console.log(index, alphabet);
+  return alphabet;
 }
